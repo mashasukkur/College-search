@@ -1,0 +1,10 @@
+body {
+    background-image: url("college.jpg");
+    color: gray;
+}
+p {
+    padding-right: 100px;
+}
+#hi {
+    background-color: gray;
+}
