@@ -1,7 +1,25 @@
-function x() {
-let request = document.getElementById('collegelist');
-let url = "https://api.data.gov/ed/collegescorecard/v1/schools?school.city=boston%20college&api_key=PWmBYMhuExKoK5KiAZEeLdV0YFaA8B4pbKp4MlT8";
-let userInput = document.getElementById('userInput').value;
-console.log(userInput);
+function x() 
+{
 
+let request = new XMLHttpRequest();
+let userinput = document.getElementById('userInput')
+
+let url = "https://api.data.gov/ed/collegescorecard/v1/schools?school.city=brooklyn%20college&api_key=aqrQOOIPPcld3m6PIIVjOzOOmGPu5aeDpo0gHi0n" + ${userinput};
+
+
+
+//console.log(userinput);
+
+
+request.open("GET", url, true);
+request.onload = function() {
+    let data = JSON.parse(this.response);
+    console.log(data);
+    if(request.status >= 200 && request.status < 400)
+    {
+        console.log(data);
+        document.getElementById("collegename").innerHTML= "College:" + results[2014].completion;
+    }
+}
+request.send();
 }
